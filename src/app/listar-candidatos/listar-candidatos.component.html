@@ -1,0 +1,13 @@
+<ul *ngIf="candidatos">
+  <li *ngFor="let candidato of candidatos; let i = index">
+    {{ i }} - {{ candidato | json }}
+    <hr />
+  </li>
+</ul>
+<p>------</p>
+<h1>Example heading <span class="badge badge-secondary">New</span></h1>
+<div class="row">
+  <div class="col-12">
+      Id 1: {{ candidato.dadosPrivados.nome }}
+  </div>
+</div>
