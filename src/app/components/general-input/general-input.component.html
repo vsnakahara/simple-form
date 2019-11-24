@@ -1,0 +1,15 @@
+<div class="form-group">
+  <label>{{fieldLabel}}</label>
+  <input
+    class="form-control"
+    type="text"
+    [(ngModel)]="value"
+    (ngModelChange)="updateChanges()"
+    aria-describedby="emailHelp"
+    [placeholder]="placeholderText"
+    [style.width.%]="size" 
+  />
+  <!-- <small id="emailHelp" class="form-text text-muted"
+    >We'll never share your email with anyone else.</small
+  > -->
+</div>
