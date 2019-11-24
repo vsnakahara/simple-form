@@ -17,6 +17,7 @@ export class GeneralInputComponent implements ControlValueAccessor {
   @Input() size = "100";
   @Input() placeholderText = "Digite um nome";
   @Input() fieldLabel = "Campo";
+  @Input() errorMessage: string;
 
   value;
 

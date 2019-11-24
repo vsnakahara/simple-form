@@ -1,15 +1,13 @@
 <div class="form-group">
-  <label>{{fieldLabel}}</label>
+  <label>{{ fieldLabel }}</label>
   <input
     class="form-control"
     type="text"
     [(ngModel)]="value"
     (ngModelChange)="updateChanges()"
-    aria-describedby="emailHelp"
     [placeholder]="placeholderText"
-    [style.width.%]="size" 
+    [style.width.%]="size"
+    [ngClass]="{ 'border border-danger text-danger': !!errorMessage }"
   />
-  <!-- <small id="emailHelp" class="form-text text-muted"
-    >We'll never share your email with anyone else.</small
-  > -->
+  <small *ngIf="!!errorMessage" class="form-text text-danger">{{ errorMessage }}</small>
 </div>
