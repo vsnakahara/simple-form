@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-lg-6 col-md-12 centered">
+    <h4>
+      Primeiro passo
+    </h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 col-md-12 centered">
+    <form [formGroup]="candidatoForm" (submit)="submit()">
+      <app-general-input
+        [fieldLabel]="'Nome'"
+        formControlName="nome"
+        [placeholderText]="'Digite seu nome'"
+      ></app-general-input>
+      <app-general-input
+        [fieldLabel]="'Nome Social'"
+        formControlName="nomeSocial"
+        [placeholderText]="'Digite seu nome social'"
+      ></app-general-input>
+      <app-general-input
+        [fieldLabel]="'CPF'"
+        formControlName="cpf"
+        [placeholderText]="'Digite seu cpf'"
+        [size]="50"
+      ></app-general-input>
+      <app-general-input
+        [size]="50"
+        formControlName="rg"
+        [placeholderText]="'Digite seu rg'"
+      ></app-general-input>
+
+      <button type="submit" class="btn btn-outline-primary">Salvar!</button>
+      <button type="reset" class="btn btn-outline-info">Limpar campos!</button>
+    </form>
+  </div>
+</div>
