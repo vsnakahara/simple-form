@@ -1,12 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   font-size: 14px;
+  color: #495057;
 }
 
-label, span {
+label,
+span {
   font-size: 12px;
 }
-.centered {
-  margin: 0 auto;
-  display: block;
+
+h2,
+h3,
+h4 {
+  color: #495057;
 }
+.helpers {
+  &-centered {
+    margin: 0 auto;
+    display: block;
+  }
+  &-color-default {
+    color: #495057;
+  }
+  &-size {
+    &-14 {
+      font-size: 14px;
+    }
+    &-16 {
+      font-size: 16px;
+    }
+  }
+}
+
