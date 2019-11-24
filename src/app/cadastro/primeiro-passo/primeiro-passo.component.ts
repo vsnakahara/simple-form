@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Candidato } from "../../models/candidato";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
@@ -8,71 +9,53 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 })
 export class PrimeiroPassoComponent implements OnInit {
   candidatoForm: FormGroup;
+  cadastro: Candidato;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.buildForm();
-    
   }
 
   buildForm() {
-    // if (this.premise) {
-    //   this.candidatoForm = this.fb.group(this.premise);
-    //   this.initializeStyles();
-    // } else {
     this.candidatoForm = this.fb.group({
       nome: ["", Validators.required],
-      cpf: [null, Validators.required],
-      rg: [null],
-      sexo: "",
+      cpf: ["", [Validators.required, Validators.maxLength(14)]],
+      rg: ["", Validators.required],
+      nomeDaMae: ["", Validators.required],
+      nomeDoPai: ["", Validators.required],
+      sexo: ["", Validators.required],
+      orgaoExpedidor: ["", Validators.required],
+      dataDeEmissao: ["", Validators.required],
+      dataDeNascimento: ["", Validators.required],
       nis: "",
       SSP: "",
       estadoExpedidor: "",
-      dataDeEmissao: "",
-      nomeDaMae: "",
-      nomeDoPai: "",
       nomeSocial: "",
-      dataDeNascimento: "",
       tituloDeEleitor: ""
     });
-    // }
   }
 
-  // private updateForm() {
-  //   if (!this.candidatoForm) {
-  //     return;
+  // cpfValidator(control: AbstractControl) {
+  //   console.log(control)
+  //   const c = control.value;
+  //   console.log(c)
+  //   if (c.test('"^((d{3}).(d{3}).(d{3})-(d{2}))*$"')) {
+  //     return null;
   //   }
-  //   if (this.premise) {
-  //     this.candidatoForm.patchValue(this.premise);
-  //     this.initializeStyles();
-  //   } else {
-  //     this.candidatoForm.reset();
-  //   }
+  //   return { cpfNaoValido: true};
   // }
 
   submit() {
     const result = this.candidatoForm.getRawValue();
     console.log(result);
-    // const premise = this.candidatoForm.getRawValue();
-    // if (this.premise && this.premise.id) {
-    //   premise.id = this.premise.id;
-    // }
-    // if (premise.centroCusto) {
-    //   const { id } = premise.centroCusto;
-    //   premise.centroCusto = { id };
-    // }
-    // if (premise.empresa) {
-    //   const { id, nome } = premise.empresa;
-    //   premise.empresa = { id, nome };
-    // }
-    // premise.subCategoriaPremissa = this.getSubcategoryToSave();
-    // premise.grupoEconomico = this.getEconomicGroupToSave();
-    // premise["styleTable"] = JSON.stringify(style);
-    // if (!premise.id) {
-    //   this.createPremise(premise);
-    // } else {
-    //   this.updatePremise(premise);
-    // }
+    if (!result.id) {
+      this.cadastrarDadosCandidato(result);
+    } else {
+      this.updatecadastrarDadosCandidato(result);
+    }
   }
+
+  cadastrarDadosCandidato(result) {}
+  updatecadastrarDadosCandidato(result) {}
 }
