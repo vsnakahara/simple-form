@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MenuItem } from "primeng/components/common/menuitem";
-import { Candidato } from '../models/candidato';
+import { Candidato } from "../models/candidato";
 
 @Component({
   selector: "app-cadastro",
@@ -9,7 +9,7 @@ import { Candidato } from '../models/candidato';
 })
 export class CadastroComponent implements OnInit {
   items: MenuItem[];
-  activeIndex: number = 0;
+  activeIndex: number = 1;
 
   candidato: Candidato;
 
@@ -25,22 +25,28 @@ export class CadastroComponent implements OnInit {
     ];
   }
 
+  set formActiveIndex(value: any) {
+    this.activeIndex = value.initData;
+  }
+
   preencherDadosPrivadosCandidato(candidato: Candidato) {
     const old = this.candidato;
     this.candidato = {
       ...old,
       id: candidato.id,
       dadosPrivados: candidato.dadosPrivados
-    };    
+    };
+    this.formActiveIndex = 1;
   }
-  
+
   preencherDadosPublicosCandidato(candidato: Candidato) {
     const old = this.candidato;
     this.candidato = {
       ...old,
       id: candidato.id,
       dadosPublicos: candidato.dadosPublicos
-    };    
+    };
+    this.formActiveIndex = 2;
   }
 
   inicializarCandidato(): Candidato {
@@ -64,7 +70,7 @@ export class CadastroComponent implements OnInit {
       dadosPublicos: {
         estadoCivil: "solteiro",
         sabatista: false,
-        grauDeEscolaridade: 'ensino_fundamentao_incompleto',
+        grauDeEscolaridade: "ensino_fundamentao_incompleto",
         quantidadeDeFilhos: 0,
         endereco: {
           cep: "10000-000",

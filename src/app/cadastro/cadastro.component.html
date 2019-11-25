@@ -8,15 +8,12 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <p-steps
-        [model]="items"
-        [(activeIndex)]="activeIndex"
-        [readonly]="true"
-      ></p-steps>
+      <p-steps [model]="items" [(activeIndex)]="activeIndex"></p-steps>
+      <!-- [readonly]="true" -->
     </div>
   </div>
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 box">
       <ng-container [ngSwitch]="activeIndex">
         <app-primeiro-passo
           *ngSwitchDefault
@@ -35,19 +32,6 @@
           [candidato]="candidato"
         ></app-terceiro-passo>
       </ng-container>
-      <!-- <ng-container *ngIf="activeIndex === 0">
-        <app-primeiro-passo
-          
-        ></app-primeiro-passo>
-      </ng-container>
-
-      <ng-container *ngIf="activeIndex === 1">
-        <app-segundo-passo></app-segundo-passo>
-      </ng-container>
-      
-      <ng-container *ngIf="activeIndex === 2">
-        <app-terceiro-passo [candidato]="candidato"></app-terceiro-passo>
-      </ng-container> -->
     </div>
   </div>
 </div>
