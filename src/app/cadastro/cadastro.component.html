@@ -17,20 +17,37 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <ng-container *ngIf="activeIndex === 0">
+      <ng-container [ngSwitch]="activeIndex">
         <app-primeiro-passo
+          *ngSwitchDefault
           [candidato]="candidato"
-          (candidatoCriado)="patchCandidato($event)"
+          (candidatoCriado)="preencherDadosPrivadosCandidato($event)"
+        ></app-primeiro-passo>
+
+        <app-segundo-passo
+          *ngSwitchCase="'1'"
+          [candidato]="candidato"
+          (candidatoCriado)="preencherDadosPublicosCandidato($event)"
+        ></app-segundo-passo>
+
+        <app-terceiro-passo
+          *ngSwitchCase="'2'"
+          [candidato]="candidato"
+        ></app-terceiro-passo>
+      </ng-container>
+      <!-- <ng-container *ngIf="activeIndex === 0">
+        <app-primeiro-passo
+          
         ></app-primeiro-passo>
       </ng-container>
 
       <ng-container *ngIf="activeIndex === 1">
-        <app-segundo-passo [candidato]="candidato"></app-segundo-passo>
+        <app-segundo-passo></app-segundo-passo>
       </ng-container>
       
       <ng-container *ngIf="activeIndex === 2">
         <app-terceiro-passo [candidato]="candidato"></app-terceiro-passo>
-      </ng-container>
+      </ng-container> -->
     </div>
   </div>
 </div>

@@ -25,9 +25,22 @@ export class CadastroComponent implements OnInit {
     ];
   }
 
-  patchCandidato(candidato: Candidato) {
-    this.candidato.id = candidato.id;
-    this.candidato.dadosPrivados = candidato.dadosPrivados;
+  preencherDadosPrivadosCandidato(candidato: Candidato) {
+    const old = this.candidato;
+    this.candidato = {
+      ...old,
+      id: candidato.id,
+      dadosPrivados: candidato.dadosPrivados
+    };    
+  }
+  
+  preencherDadosPublicosCandidato(candidato: Candidato) {
+    const old = this.candidato;
+    this.candidato = {
+      ...old,
+      id: candidato.id,
+      dadosPublicos: candidato.dadosPublicos
+    };    
   }
 
   inicializarCandidato(): Candidato {
@@ -43,10 +56,10 @@ export class CadastroComponent implements OnInit {
         orgaoExpedidor: "SSP",
         dataDeEmissao: "01-01-1990",
         dataDeNascimento: "01-01-1994",
-        nis: "123123",
+        nis: null,
         estadoExpedidor: "PR",
-        nomeSocial: "",
-        tituloDeEleitor: "09876"
+        nomeSocial: null,
+        tituloDeEleitor: null
       },
       dadosPublicos: {
         estadoCivil: "solteiro",
