@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 import { Candidato } from "../../models/candidato";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { CandidatoService } from "../../services/candidato.service";
-import { DadosPrivados } from '../../models/dadosPrivados';
+import { DadosPrivados } from "../../models/dadosPrivados";
 
 @Component({
   selector: "app-primeiro-passo",
@@ -57,6 +57,4 @@ export class PrimeiroPassoComponent implements OnInit {
         this.candidatoCriado.emit(novoCandidato);
       });
   }
-
-  updatecadastrarDadosCandidato(result) {}
 }

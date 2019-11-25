@@ -6,4 +6,5 @@ export interface Candidato {
   dadosPrivados: DadosPrivados;
   dadosPublicos: DadosPublicos;
   isFormularioCompleto?: boolean;
+  thumbnail?: string;
 }

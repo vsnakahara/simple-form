@@ -19,6 +19,7 @@
     <div *ngIf="arquivoSelecionado">
       <img src="{{ arquivoSelecionado }}" alt="" id="img" />
       <div class="legend">Imagem: {{ nomeArquivoSelecionado }}</div>
+      <small *ngIf="!!errorMessage" class="form-text text-danger legend">{{ errorMessage }}</small>
     </div>
 
     <div class="row">

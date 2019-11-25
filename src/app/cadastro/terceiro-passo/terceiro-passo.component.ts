@@ -13,6 +13,8 @@ export class TerceiroPassoComponent implements OnInit {
 
   arquivoSelecionado;
   nomeArquivoSelecionado: string;
+  errorMessage: string;
+  
 
   constructor(private candidatoService: CandidatoService) {}
 
@@ -37,8 +39,10 @@ export class TerceiroPassoComponent implements OnInit {
 
   submit() {
     this.candidato.thumbnail = this.arquivoSelecionado;
-    if (!this.candidato.id) {
+    if (this.candidato.id && this.candidato.thumbnail) {
       this.salvarFotoCandidato(this.candidato);
+    } else {
+      this.errorMessage = 'Selecione uma imagem válida!'
     }
   }
 
