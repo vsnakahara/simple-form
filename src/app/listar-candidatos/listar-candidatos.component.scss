@@ -1,0 +1,14 @@
+ul {
+  text-align: center;
+  li {
+    display: inline-block;
+    margin: 15px;
+    .card {
+      width: 215px;
+      img {
+        height: 185px;
+        width: auto;
+      }
+    }
+  }
+}

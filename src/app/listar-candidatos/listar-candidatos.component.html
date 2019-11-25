@@ -1,13 +1,28 @@
-<ul *ngIf="candidatos">
+<div class="col-12">
+  <h3>
+    Lista de candidatos
+  </h3>
+</div>
+
+<ul *ngIf="candidatos" class="row">
   <li *ngFor="let candidato of candidatos; let i = index">
-    {{ i }} - {{ candidato | json }}
-    <hr />
+    <div class="card">
+      <img
+        src="{{
+          candidato.thumbnail
+            ? candidato.thumbnail
+            : '/assets/img/default-user.png'
+        }}"
+        class="card-img-top"
+        alt="foto-3x4"
+      />      
+      <div class="card-body">
+        <a href="#" routerLink="listar-candidatos/candidato/{{candidato.id}}">
+          <h5 class="card-title">
+            {{ i + 1 }} - {{ candidato.dadosPrivados.nome }}
+          </h5>
+        </a>
+      </div>
+    </div>
   </li>
 </ul>
-<p>------</p>
-<h1>Example heading <span class="badge badge-secondary">New</span></h1>
-<div class="row">
-  <div class="col-12">
-      Id 1: {{ candidato.dadosPrivados.nome }}
-  </div>
-</div>
