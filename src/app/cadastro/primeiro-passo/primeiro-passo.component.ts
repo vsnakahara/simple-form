@@ -1,6 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 import { Candidato } from "../../models/candidato";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { CandidatoService } from "../../services/candidato.service";
+import { DadosPrivados } from '../../models/dadosPrivados';
 
 @Component({
   selector: "app-primeiro-passo",
@@ -9,9 +11,13 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 })
 export class PrimeiroPassoComponent implements OnInit {
   candidatoForm: FormGroup;
-  cadastro: Candidato;
+  @Input() candidato: Candidato;
+  @Output() candidatoCriado = new EventEmitter<Candidato>();
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private candidatoService: CandidatoService
+  ) {}
 
   ngOnInit() {
     this.buildForm();
@@ -29,33 +35,28 @@ export class PrimeiroPassoComponent implements OnInit {
       dataDeEmissao: ["", Validators.required],
       dataDeNascimento: ["", Validators.required],
       nis: "",
-      SSP: "",
       estadoExpedidor: "",
       nomeSocial: "",
       tituloDeEleitor: ""
     });
   }
 
-  // cpfValidator(control: AbstractControl) {
-  //   console.log(control)
-  //   const c = control.value;
-  //   console.log(c)
-  //   if (c.test('"^((d{3}).(d{3}).(d{3})-(d{2}))*$"')) {
-  //     return null;
-  //   }
-  //   return { cpfNaoValido: true};
-  // }
-
   submit() {
-    const result = this.candidatoForm.getRawValue();
-    console.log(result);
-    if (!result.id) {
-      this.cadastrarDadosCandidato(result);
-    } else {
-      this.updatecadastrarDadosCandidato(result);
+    const dados: DadosPrivados = this.candidatoForm.getRawValue();
+    this.candidato.dadosPrivados = dados;
+    if (!this.candidato.id) {
+      this.cadastrarDadosCandidato(this.candidato);
     }
   }
 
-  cadastrarDadosCandidato(result) {}
+  cadastrarDadosCandidato(candidato: Candidato) {
+    this.candidatoService
+      .salvarDadosPrivadosCandidato(candidato)
+      .subscribe(response => {
+        const novoCandidato = response;
+        this.candidatoCriado.emit(novoCandidato);
+      });
+  }
+
   updatecadastrarDadosCandidato(result) {}
 }

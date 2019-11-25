@@ -1,5 +1,5 @@
 export interface Contato {
   email: string;
-  telefone: number;
-  celular: number;
+  telefone: string;
+  celular: string;
 }

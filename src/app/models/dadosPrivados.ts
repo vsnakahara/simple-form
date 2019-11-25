@@ -1,15 +1,15 @@
 export interface DadosPrivados {
-  cpf: number;
-  rg: number;
+  cpf: string;
+  rg: string;
   nome: string;
   sexo: "masculino" | "feminino";
-  nis?: number;
   orgaoExpedidor: string;
   estadoExpedidor: string;
-  dataDeEmissao: Date;
+  dataDeEmissao: string;
   nomeDaMae: string;
   nomeDoPai: string;
+  dataDeNascimento: string;
+  tituloDeEleitor?: string;
+  nis?: string;
   nomeSocial?: string;
-  dataDeNascimento: Date;
-  tituloDeEleitor: number;
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Candidato } from '../models/candidato';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,9 @@ import { HttpClient } from '@angular/common/http';
 export class CandidatoService {
 
   url = "http://localhost:3000/candidatos/";
+  headers: HttpHeaders = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
 
   constructor(private http: HttpClient) { }
 
@@ -20,11 +24,19 @@ export class CandidatoService {
   }
   
   deleteCandidato(idCandidato: number) {
-    return this.http.delete<any[]>(`${this.url}${idCandidato}`);
+    return this.http.delete<any[]>(`${this.url}${idCandidato}`, { headers: this.headers });
+  }
+
+  createCandidato(candidato: any): Observable<Candidato> {
+    return this.http.post<Candidato>(`${this.url}`, candidato, { headers: this.headers });
+  }
+
+  salvarDadosPrivadosCandidato(candidato: Candidato): Observable<Candidato> {
+    return this.http.post<Candidato>(`${this.url}`, candidato, { headers: this.headers });
   }
 
   editCandidato(candidato: any): Observable<any[]> {
-    return this.http.put<any[]>(`${this.url}${candidato.id}`, candidato);
+    return this.http.put<any[]>(`${this.url}${candidato.id}`, candidato, { headers: this.headers });
   }
   
 }
