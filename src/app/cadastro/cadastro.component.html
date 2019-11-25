@@ -8,8 +8,11 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <p-steps [model]="items" [(activeIndex)]="activeIndex"></p-steps>
-      <!-- [readonly]="true" -->
+      <p-steps
+        [model]="items"
+        [(activeIndex)]="activeIndex"
+        [readonly]="true"
+      ></p-steps>
     </div>
   </div>
   <div class="row">
@@ -30,7 +33,13 @@
         <app-terceiro-passo
           *ngSwitchCase="'2'"
           [candidato]="candidato"
+          (emitirFotoCandidato)="preencherImagemCandidato($event)"
         ></app-terceiro-passo>
+
+        <app-quarto-passo
+          *ngSwitchCase="'3'"
+          [candidato]="candidato"
+        ></app-quarto-passo>
       </ng-container>
     </div>
   </div>

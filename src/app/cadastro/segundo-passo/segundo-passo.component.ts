@@ -3,11 +3,10 @@ import { Candidato } from "../../models/candidato";
 import {
   FormGroup,
   FormBuilder,
-  Validators,
-  FormControl
+  Validators
 } from "@angular/forms";
 import { CandidatoService } from "../../services/candidato.service";
-import { DadosPublicos } from '../../models/dadosPublicos';
+import { DadosPublicos } from "../../models/dadosPublicos";
 
 @Component({
   selector: "app-segundo-passo",
@@ -61,7 +60,7 @@ export class SegundoPassoComponent implements OnInit {
 
   submit() {
     const dados: DadosPublicos = this.candidatoForm.getRawValue();
-    console.log(dados)
+    console.log(dados);
     this.candidato.dadosPublicos = dados;
     if (this.candidato.id) {
       this.atualizarDadosCandidato(this.candidato);
@@ -70,7 +69,7 @@ export class SegundoPassoComponent implements OnInit {
 
   atualizarDadosCandidato(candidato: Candidato) {
     this.candidatoService
-      .salvarDadosPrivadosCandidato(candidato)
+      .editarCandidato(candidato)
       .subscribe(response => {
         const novoCandidato = response;
         this.candidatoCriado.emit(novoCandidato);

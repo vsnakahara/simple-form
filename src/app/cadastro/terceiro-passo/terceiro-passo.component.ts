@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { MenuItem } from 'primeng/components/common/menuitem';
+import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
+import { Candidato } from "../../models/candidato";
+import { CandidatoService } from "../../services/candidato.service";
 
 @Component({
   selector: "app-terceiro-passo",
@@ -8,66 +8,46 @@ import { MenuItem } from 'primeng/components/common/menuitem';
   styleUrls: ["./terceiro-passo.component.scss"]
 })
 export class TerceiroPassoComponent implements OnInit {
-  candidatoForm: FormGroup;
+  @Input() candidato: Candidato;
+  @Output() emitirFotoCandidato = new EventEmitter<Candidato>();
 
-  constructor(private fb: FormBuilder) {}
+  arquivoSelecionado;
+  nomeArquivoSelecionado: string;
 
-  ngOnInit() {
-    this.buildForm();
-    
+  constructor(private candidatoService: CandidatoService) {}
+
+  ngOnInit() {}
+
+  onFileChanged(event) {
+    const file = <File>event.target.files[0];
+
+    if (file) {
+      this.nomeArquivoSelecionado = file.name;
+      const reader = new FileReader();
+
+      reader.onload = this.handleReaderLoaded.bind(this);
+      reader.readAsBinaryString(file);
+    }
   }
 
-  buildForm() {
-    // if (this.premise) {
-    //   this.candidatoForm = this.fb.group(this.premise);
-    //   this.initializeStyles();
-    // } else {
-    this.candidatoForm = this.fb.group({
-      nome: ["", Validators.required],
-      empresa: [null, Validators.required],
-      centroCusto: [null],
-      unidadeDeMedida: "",
-      moeda: "",
-      campo1: "",
-      campo2: "",
-      campo3: "",
-      campo4: ""
-    });
-    // }
+  private handleReaderLoaded(e) {
+    const binaryString = e.target.result;
+    this.arquivoSelecionado = "data:image/png;base64," + btoa(binaryString);
   }
-
-  // private updateForm() {
-  //   if (!this.candidatoForm) {
-  //     return;
-  //   }
-  //   if (this.premise) {
-  //     this.candidatoForm.patchValue(this.premise);
-  //     this.initializeStyles();
-  //   } else {
-  //     this.candidatoForm.reset();
-  //   }
-  // }
 
   submit() {
-    // const premise = this.candidatoForm.getRawValue();
-    // if (this.premise && this.premise.id) {
-    //   premise.id = this.premise.id;
-    // }
-    // if (premise.centroCusto) {
-    //   const { id } = premise.centroCusto;
-    //   premise.centroCusto = { id };
-    // }
-    // if (premise.empresa) {
-    //   const { id, nome } = premise.empresa;
-    //   premise.empresa = { id, nome };
-    // }
-    // premise.subCategoriaPremissa = this.getSubcategoryToSave();
-    // premise.grupoEconomico = this.getEconomicGroupToSave();
-    // premise["styleTable"] = JSON.stringify(style);
-    // if (!premise.id) {
-    //   this.createPremise(premise);
-    // } else {
-    //   this.updatePremise(premise);
-    // }
+    this.candidato.thumbnail = this.arquivoSelecionado;
+    if (!this.candidato.id) {
+      this.salvarFotoCandidato(this.candidato);
+    }
+  }
+
+  salvarFotoCandidato(candidato: Candidato) {
+    this.candidatoService
+      .editarCandidato(candidato)
+      .subscribe(response => {
+        const novoCandidato = response;
+        this.emitirFotoCandidato.emit(novoCandidato);
+      });
   }
 }

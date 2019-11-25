@@ -13,13 +13,15 @@ import { SegundoPassoComponent } from "./segundo-passo/segundo-passo.component";
 import { TerceiroPassoComponent } from "./terceiro-passo/terceiro-passo.component";
 import { GeneralInputModule } from "../components/general-input/general-input.module";
 import { CalendarModule } from "primeng/calendar";
+import { QuartoPassoComponent } from './quarto-passo/quarto-passo.component';
 
 @NgModule({
   declarations: [
     CadastroComponent,
     PrimeiroPassoComponent,
     SegundoPassoComponent,
-    TerceiroPassoComponent
+    TerceiroPassoComponent,
+    QuartoPassoComponent
   ],
   imports: [
     CommonModule,

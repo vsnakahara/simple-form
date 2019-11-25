@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  font-size: 14px;
-  color: #495057;
+  font-size: 14px !important;
+  color: #495057 !important;
+  background-color: #FAFAFA !important;
 }
 
 label,
@@ -32,6 +33,9 @@ h4 {
   }
   &-padding-tb {
     padding: 2rem 15px;
+  }
+  &-bg-white {
+    background-color: white;
   }
 }
 

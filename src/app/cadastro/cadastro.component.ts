@@ -9,7 +9,7 @@ import { Candidato } from "../models/candidato";
 })
 export class CadastroComponent implements OnInit {
   items: MenuItem[];
-  activeIndex: number = 1;
+  activeIndex: number = 0;
 
   candidato: Candidato;
 
@@ -20,13 +20,13 @@ export class CadastroComponent implements OnInit {
     this.items = [
       { label: "Dados Básicos" },
       { label: "Dados Complementares" },
-      { label: "Dados para contato" },
+      { label: "Identificação" },
       { label: "Confirmação" }
     ];
   }
 
-  set formActiveIndex(value: any) {
-    this.activeIndex = value.initData;
+  set formActiveIndex(value: number) {
+    this.activeIndex = value;
   }
 
   preencherDadosPrivadosCandidato(candidato: Candidato) {
@@ -47,6 +47,16 @@ export class CadastroComponent implements OnInit {
       dadosPublicos: candidato.dadosPublicos
     };
     this.formActiveIndex = 2;
+  }
+
+  preencherImagemCandidato(candidato: Candidato) {
+    const old = this.candidato;
+    this.candidato = {
+      ...old,
+      thumbnail: candidato.thumbnail,
+      isFormularioCompleto: true
+    };
+    this.formActiveIndex = 3;
   }
 
   inicializarCandidato(): Candidato {
