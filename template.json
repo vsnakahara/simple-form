@@ -37,44 +37,6 @@
           "complemento": "casa"
         }
       }
-    },
-    {
-      "id": 2,
-      "dadosPrivados": {
-        "cpf": "65589569087",
-        "rg": "693806994",
-        "nome": "6uke Skywalker",
-        "sexo": "Masculino",
-        "nis": "",
-        "orgaoExpedidor": "SSP",
-        "estadoExpedidor": "",
-        "dataDeEmissao": "2000-01-01",
-        "nomeDaMae": "Padamé Amidala",
-        "nomeDoPai": "Anakin Skywalker",
-        "nomeSocial": "",
-        "dataDeNascimento": "1977-05-19",
-        "tituloDeEleitor": ""
-      },
-      "dadosPublicos": {
-        "estadoCivilng": "",
-        "sabatista": "",
-        "grauDeEscolaridade": "ensino_fundamentao_incompleto",
-        "quantidadeDeFilhos": 0,
-        "contato": {
-          "email": "l2uke_skywalker@email.com",
-          "telefone": "4431231231",
-          "celular": "44999123123"
-        },
-        "endereco": {
-          "cep": "37112500",
-          "rua": "dos desertos",
-          "numero": 123,
-          "bairro": "",
-          "cidade": "Mos Espa",
-          "estado": "PR",
-          "complemento": "casa"
-        }
-      }
     }
   ]
 }
