@@ -7,6 +7,7 @@ import { ListarCandidatosComponent } from './listar-candidatos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VisualizarCandidatoComponent } from './visualizar-candidato/visualizar-candidato.component';
 import { RouterModule } from '@angular/router';
+import { MostrarDadosCandidatosModule } from '../components/mostrar-dados-candidatos/mostrar-dados-candidatos.module';
 
 @NgModule({
   declarations: [ListarCandidatosComponent, VisualizarCandidatoComponent],
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     ListarCandidatosRoutingModule,
     HttpClientModule,
+    MostrarDadosCandidatosModule,   
     RouterModule.forChild([])
   ],
   providers: [CandidatoService]
