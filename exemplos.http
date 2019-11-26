@@ -1,0 +1,87 @@
+# DELETE http://localhost:3000/candidatos/2
+# Content-Type: application/json
+
+# GET http://localhost:3000/candidatos/
+# Content-Type: application/json
+
+# POST http://localhost:3000/candidatos/
+# Content-Type: application/json
+
+# {"id": 2,
+#   "dadosPrivados": {
+#     "cpf": "25589569087",
+#     "rg": "293806994",
+#     "nome": "2uke Skywalker",
+#     "sexo": "Masculino",
+#     "nis": "",
+#     "orgaoExpedidor": "SSP",
+#     "estadoExpedidor": "",
+#     "dataDeEmissao": "2000-01-01",
+#     "nomeDaMae": "Padamé Amidala",
+#     "nomeDoPai": "Anakin Skywalker",
+#     "nomeSocial": "",
+#     "dataDeNascimento": "1977-05-19",
+#     "tituloDeEleitor": ""
+#   },
+#   "dadosPublicos": {
+#     "estadoCivilng": "",
+#     "sabatista": "",
+#     "grauDeEscolaridade": "ensino_fundamentao_incompleto",
+#     "quantidadeDeFilhos": 0,
+#     "contato": {
+#       "email": "l2uke_skywalker@email.com",
+#       "telefone": "4431231231",
+#       "celular": "44999123123"
+#     },
+#     "endereco": {
+#       "cep": "37112500",
+#       "rua": "dos desertos",
+#       "numero": 123,
+#       "bairro": "",
+#       "cidade": "Mos Espa",
+#       "estado": "PR",
+#       "complemento": "casa"
+#     }
+#   }
+# }
+
+# PUT http://localhost:3000/candidatos/2
+# Content-Type: application/json
+
+# {"id": 2,
+#   "dadosPrivados": {
+#     "cpf": "65589569087",
+#     "rg": "693806994",
+#     "nome": "6uke Skywalker",
+#     "sexo": "Masculino",
+#     "nis": "",
+#     "orgaoExpedidor": "SSP",
+#     "estadoExpedidor": "",
+#     "dataDeEmissao": "2000-01-01",
+#     "nomeDaMae": "Padamé Amidala",
+#     "nomeDoPai": "Anakin Skywalker",
+#     "nomeSocial": "",
+#     "dataDeNascimento": "1977-05-19",
+#     "tituloDeEleitor": ""
+#   },
+#   "dadosPublicos": {
+#     "estadoCivilng": "",
+#     "sabatista": "",
+#     "grauDeEscolaridade": "ensino_fundamentao_incompleto",
+#     "quantidadeDeFilhos": 0,
+#     "contato": {
+#       "email": "l2uke_skywalker@email.com",
+#       "telefone": "4431231231",
+#       "celular": "44999123123"
+#     },
+#     "endereco": {
+#       "cep": "37112500",
+#       "rua": "dos desertos",
+#       "numero": 123,
+#       "bairro": "",
+#       "cidade": "Mos Espa",
+#       "estado": "PR",
+#       "complemento": "casa"
+#     }
+#   }
+# }    
