@@ -14,6 +14,7 @@ import { TerceiroPassoComponent } from "./terceiro-passo/terceiro-passo.componen
 import { GeneralInputModule } from "../components/general-input/general-input.module";
 import { CalendarModule } from "primeng/calendar";
 import { QuartoPassoComponent } from './quarto-passo/quarto-passo.component';
+import { MostrarDadosCandidatosModule } from '../components/mostrar-dados-candidatos/mostrar-dados-candidatos.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { QuartoPassoComponent } from './quarto-passo/quarto-passo.component';
     ReactiveFormsModule,
     StepsModule,
     GeneralInputModule,
-    CalendarModule
+    CalendarModule,
+    MostrarDadosCandidatosModule
   ],
   providers: [CandidatoService]
 })
