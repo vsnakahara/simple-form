@@ -1,3 +1,6 @@
+.homepage {
+  height: 100%;
+}
 header,
 footer {
   background-image: linear-gradient(90deg, #007ad929, #836fff);
@@ -10,6 +13,11 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  > a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
   .nav {
     .nav-item {
       .nav-link {
@@ -20,9 +28,10 @@ header {
   }
 }
 footer {
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
+  
 
   p {
     color: #495057;

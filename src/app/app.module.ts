@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { MostrarDadosCandidatosModule } from './components/mostrar-dados-candidatos/mostrar-dados-candidatos.module';
 
 @NgModule({
   declarations: [

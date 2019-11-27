@@ -1,5 +1,5 @@
 <header>
-  <h3>Conquests</h3>
+  <a href="/"><h3>Conquests</h3></a>
   <ul class="nav nav-pills">
     <li class="nav-item">
       <a class="nav-link" routerLink="cadastro"
@@ -14,7 +14,7 @@
   </ul>
 </header>
 
-<div class="jumbotron">
+<div class="jumbotron" *ngIf="router.url === '/'">
   <div class="row">
     <div class="col-12">
       <h3>Concurso N.º 1000</h3>
@@ -27,7 +27,6 @@
   </div>
 </div>
 <router-outlet></router-outlet>
-
 <footer>
   <div class="row">
     <div class="col-12">
