@@ -39,7 +39,12 @@
         <app-quarto-passo
           *ngSwitchCase="'3'"
           [candidato]="candidato"
+          (concluirCadastro)="concluir()"
         ></app-quarto-passo>
+
+        <app-quinto-passo
+          *ngSwitchCase="'4'"          
+        ></app-quinto-passo>
       </ng-container>
     </div>
   </div>

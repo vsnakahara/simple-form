@@ -9,7 +9,7 @@ import { Candidato } from "../models/candidato";
 })
 export class CadastroComponent implements OnInit {
   items: MenuItem[];
-  activeIndex: number = 3;
+  activeIndex: number = 0;
 
   candidato: Candidato;
 
@@ -58,6 +58,10 @@ export class CadastroComponent implements OnInit {
       isFormularioCompleto: true
     };
     this.formActiveIndex = 3;
+  }
+
+  concluirForm() {
+    this.formActiveIndex = 4;
   }
 
   inicializarCandidato(): Candidato {

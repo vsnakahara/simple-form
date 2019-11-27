@@ -15,6 +15,7 @@ import { GeneralInputModule } from "../components/general-input/general-input.mo
 import { CalendarModule } from "primeng/calendar";
 import { QuartoPassoComponent } from './quarto-passo/quarto-passo.component';
 import { MostrarDadosCandidatosModule } from '../components/mostrar-dados-candidatos/mostrar-dados-candidatos.module';
+import { QuintoPassoComponent } from './quinto-passo/quinto-passo/quinto-passo.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MostrarDadosCandidatosModule } from '../components/mostrar-dados-candid
     PrimeiroPassoComponent,
     SegundoPassoComponent,
     TerceiroPassoComponent,
-    QuartoPassoComponent
+    QuartoPassoComponent,
+    QuintoPassoComponent
   ],
   imports: [
     CommonModule,
