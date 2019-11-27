@@ -5,42 +5,26 @@
     <h4>
       Conferência
     </h4>
-
-    <div class="col-lg-6 col-sm-12 form-group no-padding">
-      <label>Anexar foto 3x4</label>
-      <input
-        type="file"
-        (change)="onFileChanged($event)"
-        #fileInput
-        class="d-none"
-      />
-    </div>
-
-    <div *ngIf="arquivoSelecionado">
-      <img src="{{ arquivoSelecionado }}" alt="" id="img" />
-      <div class="legend">Imagem: {{ nomeArquivoSelecionado }}</div>
-    </div>
-
+    <p>
+      Por favor, verifique se os dados abaixo estão corretos:
+    </p>
     <div class="row">
-      <div class="col-lg-6 col-sm-12">
-        <button
-          (click)="fileInput.click()"
-          class="btn btn-outline-primary"
-          [style.width.%]="100"
-        >
-          Selecione um arquivo de imagem
-        </button>
+      <div class="col-12">
+        <app-mostrar-dados-candidatos
+          [candidato]="candidato"
+        ></app-mostrar-dados-candidatos>
       </div>
-      <div class="col-lg-6 col-sm-12">
-        <button
-          (click)="submit()"
-          class="btn btn-primary"
-          [style.width.%]="100"
-          [disabled]="!arquivoSelecionado"
-        >
-          Salvar!
-        </button>
-      </div>
+    </div>
+
+    <div class="col-lg-12 col-sm-12">
+      <button
+        (click)="submit()"
+        class="btn btn-primary"
+        [style.width.%]="100"
+        [disabled]="!arquivoSelecionado"
+      >
+        Salvar!
+      </button>
     </div>
   </div>
 </div>
