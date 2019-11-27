@@ -37,7 +37,8 @@
           "complemento": "casa"
         }
       },
-      "thumbnail": ""
+      "thumbnail": "",
+      "isFormularioCompleto": true
     }
   ]
 }
