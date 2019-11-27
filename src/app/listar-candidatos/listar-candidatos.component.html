@@ -11,6 +11,7 @@
       <li
         *ngFor="let candidato of candidatos; let i = index"
         class="col-md-4 col-sm-12"
+        [routerLink]="['/listar-candidatos/candidato', candidato.id]"
       >
         <div class="card">
           <div class="row">
@@ -47,8 +48,3 @@
     </ul>
   </div>
 </div>
-<!-- <div class="row">
-  <div class="col-12">
-    <app-mostrar-dados-candidatos [candidato]="candidato"></app-mostrar-dados-candidatos>
-  </div>
-</div> -->

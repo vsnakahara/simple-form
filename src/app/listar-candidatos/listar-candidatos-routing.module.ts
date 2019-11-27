@@ -10,7 +10,7 @@ const routes: Routes = [
     data: { title: "Listar Candidatos" }
   },
   {
-    path: "candidato/:id/",
+    path: "candidato/:id",
     component: VisualizarCandidatoComponent
   }
 ];

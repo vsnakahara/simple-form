@@ -1,3 +1,22 @@
-<p>
-  visualizar-candidato works!
-</p>
+<div class="container">
+  <div class="row">
+    <div
+      *ngIf="candidato"
+      class="col-lg-10 box col-md-12 helpers-centered helpers-padding-tb helpers-bg-white"
+    >
+      <h3>
+        Candidato {{ candidato.id }}:
+        <strong>{{ candidato.dadosPrivados.nome }}</strong>
+      </h3>
+      <app-mostrar-dados-candidatos
+        [candidato]="candidato"
+      ></app-mostrar-dados-candidatos>
+
+      <div class="col-lg-12 col-sm-12">
+        <button routerLink="/" class="btn btn-primary" [style.width.%]="100">
+          Voltar para a página inicial
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
