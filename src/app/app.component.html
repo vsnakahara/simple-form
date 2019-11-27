@@ -1,15 +1,37 @@
-<div class="row">
-  <div class="col-12">
-    <h1>Concurso N.º 1000</h1>
+<header>
+  <h3>Conquests</h3>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="cadastro"
+        ><i class="pi pi-plus align-text-bottom"></i> Cadastrar candidato</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="listar-candidatos"
+        ><i class="pi pi-list align-text-bottom"></i> Listar candidatos</a
+      >
+    </li>
+  </ul>
+</header>
+
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-12">
+      <h3>Concurso N.º 1000</h3>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 2019.
+      </p>
+    </div>
   </div>
 </div>
-
-<ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link" routerLink="cadastro"> Cadastrar candidato</a><br />
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="listar-candidatos"> Listar candidatos</a>
-  </li>
-</ul>
 <router-outlet></router-outlet>
+
+<footer>
+  <div class="row">
+    <div class="col-12">
+      <p>Conquests - Avaliação MentorsTec 2019. :D</p>
+    </div>
+  </div>
+</footer>
