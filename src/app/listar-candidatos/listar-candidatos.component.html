@@ -10,24 +10,6 @@
     <div class="col-12">
       <ul *ngIf="candidatos" class="no-padding">
         <li *ngFor="let candidato of candidatos; let i = index">
-          <!-- <div class="card">
-      <img
-        src="{{
-          candidato.thumbnail
-            ? candidato.thumbnail
-            : '/assets/img/default-user.png'
-        }}"
-        class="card-img-top"
-        alt="foto-3x4"
-      />      
-      <div class="card-body">
-        <a href="#" [routerLink]="['/candidato', candidato.id]">
-          <h5 class="card-title">
-            {{ i + 1 }} - {{ candidato.dadosPrivados.nome }}
-          </h5>
-        </a>
-      </div>
-    </div> -->
           <div class="card mb-12">
             <div class="row no-gutters">
               <div class="col-md-2">
