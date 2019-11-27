@@ -1,14 +1,30 @@
+.title {
+  margin: 8px 0;
+  padding: 0.5rem 2rem;
+}
 ul {
-  text-align: center;
+  text-align: justify;
   padding: 0;
   li {
     display: inline-block;
-    margin: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     .card {
-      max-height: 150px;
+      &-body {
+        text-align: left;
+        padding: 5px;
+      }
+      &-title {
+        margin-bottom: 5px;
+      }
+      &-text {
+        margin-bottom: 0;
+      }
       img {
-        height: 135px;
-        width: auto;
+        height: 65px;
+        width: 100%;
+        display: block;
+        margin: auto 0;
       }
     }
   }

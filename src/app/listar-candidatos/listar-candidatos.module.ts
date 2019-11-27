@@ -14,8 +14,8 @@ import { MostrarDadosCandidatosModule } from '../components/mostrar-dados-candid
   imports: [
     CommonModule,
     ListarCandidatosRoutingModule,
-    HttpClientModule,
     MostrarDadosCandidatosModule,   
+    HttpClientModule,
     RouterModule.forChild([])
   ],
   providers: [CandidatoService]

@@ -1,48 +1,54 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h3>
-        Lista de candidatos
-      </h3>
-    </div>
+<div class="row">
+  <div class="col-12">
+    <h3 class="title">
+      Lista de candidatos
+    </h3>
   </div>
-  <div class="row">
-    <div class="col-12">
-      <ul *ngIf="candidatos" class="no-padding">
-        <li *ngFor="let candidato of candidatos; let i = index">
-          <div class="card mb-12">
-            <div class="row no-gutters">
-              <div class="col-md-2">
-                <img
-                  src="{{
-                    candidato.thumbnail
-                      ? candidato.thumbnail
-                      : '/assets/img/default-user.png'
-                  }}"
-                  class="card-img-top"
-                  alt="foto-3x4"
-                />
-              </div>
-              <div class="col-md-10">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    {{ i + 1 }} - {{ candidato.dadosPrivados.nome }}
-                  </h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </p>
-                </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <ul *ngIf="candidatos" class="no-padding">
+      <li
+        *ngFor="let candidato of candidatos; let i = index"
+        class="col-md-4 col-sm-12"
+      >
+        <div class="card">
+          <div class="row">
+            <div class="col-3">
+              <img
+                src="{{
+                  candidato.thumbnail
+                    ? candidato.thumbnail
+                    : '/assets/img/default-user.png'
+                }}"
+                alt="foto-3x4"
+              />
+            </div>
+            <div class="col-9">
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ i + 1 }} -
+                  {{
+                    candidato.dadosPrivados.nomeSocial ||
+                      candidato.dadosPrivados.nome
+                  }}
+                </h5>
+                <p class="card-text">
+                  {{ candidato.dadosPublicos.contato.email }}
+                </p>
+                <p class="card-text">
+                  <small class="text-muted"></small>
+                </p>
               </div>
             </div>
           </div>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
-<app-mostrar-dados-candidatos></app-mostrar-dados-candidatos>
+<!-- <div class="row">
+  <div class="col-12">
+    <app-mostrar-dados-candidatos [candidato]="candidato"></app-mostrar-dados-candidatos>
+  </div>
+</div> -->
