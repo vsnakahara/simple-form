@@ -3,8 +3,10 @@
 }
 header,
 footer {
+  background-color: white;
   background-image: linear-gradient(90deg, #007ad929, #836fff);
   padding: 0.5rem 2rem;
+  z-index: 2;
 }
 header {
   -webkit-box-align: center;
@@ -31,7 +33,6 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  
 
   p {
     color: #495057;

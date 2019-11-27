@@ -9,7 +9,7 @@ import { Candidato } from "../models/candidato";
 })
 export class CadastroComponent implements OnInit {
   items: MenuItem[];
-  activeIndex: number = 0;
+  activeIndex: number = 3;
 
   candidato: Candidato;
 
@@ -21,6 +21,7 @@ export class CadastroComponent implements OnInit {
       { label: "Dados Básicos" },
       { label: "Dados Complementares" },
       { label: "Identificação" },
+      { label: "Conferência" },
       { label: "Confirmação" }
     ];
   }
