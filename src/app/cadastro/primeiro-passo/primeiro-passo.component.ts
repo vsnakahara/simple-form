@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 import { Candidato } from "../../models/candidato";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators, AbstractControl } from "@angular/forms";
 import { CandidatoService } from "../../services/candidato.service";
 import { DadosPrivados } from "../../models/dadosPrivados";
 
@@ -17,7 +17,7 @@ export class PrimeiroPassoComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private candidatoService: CandidatoService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.buildForm();
@@ -33,12 +33,27 @@ export class PrimeiroPassoComponent implements OnInit {
       sexo: ["", Validators.required],
       orgaoExpedidor: ["", Validators.required],
       dataDeEmissao: ["", Validators.required],
-      dataDeNascimento: ["", Validators.required],
+      dataDeNascimento: ["", [Validators.required, this.validateAge]],
       nis: "",
       estadoExpedidor: "",
       nomeSocial: "",
       tituloDeEleitor: ""
     });
+  }
+
+  validateAge(control: AbstractControl) {
+    const dataDeHoje = new Date();
+    const anoAtual = dataDeHoje.getFullYear();
+
+    if (control.value) {
+      const anoDeNascimento = control.value.getFullYear();
+      const idade = anoAtual - anoDeNascimento;
+      if (idade < 18) {
+        return { idadeInvalida: true };
+      }
+      return null;
+    }
+    return null;
   }
 
   submit() {

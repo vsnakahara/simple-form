@@ -35,6 +35,7 @@
               Masculino
             </label>
           </div>
+
           <div class="form-check form-check-inline">
             <input
               formControlName="sexo"
@@ -72,6 +73,7 @@
             "
           ></app-general-input>
         </div>
+
         <div class="col-6">
           <app-general-input
             formControlName="rg"
@@ -100,11 +102,18 @@
             "
           ></app-general-input>
         </div>
+
         <div class="col-6">
           <app-general-input
             formControlName="estadoExpedidor"
             [fieldLabel]="'Estado expedidor'"
             [placeholderText]="'Digite o Estado expedidor'"
+            [errorMessage]="
+              candidatoForm.get('estadoExpedidor').dirty &&
+              candidatoForm.get('estadoExpedidor').errors
+                ? 'Campo Obrigatório!'
+                : null
+            "
           ></app-general-input>
         </div>
       </div>
@@ -118,9 +127,18 @@
                 formControlName="dataDeEmissao"
                 [placeholder]="'dd/mm/aaaa'"
               ></p-calendar>
+              <small
+                *ngIf="
+                  candidatoForm.get('dataDeEmissao').dirty &&
+                  candidatoForm.get('dataDeEmissao').errors.idadeInvalida
+                "
+                class="form-text text-danger"
+                >O candidato deve ter 18 anos ou mais.
+              </small>
             </div>
           </div>
         </div>
+        
         <div class="col-6">
           <app-general-input
             formControlName="nis"
@@ -134,12 +152,24 @@
         [fieldLabel]="'Nome da mãe'"
         formControlName="nomeDaMae"
         [placeholderText]="'Digite o nome da sua mãe'"
+        [errorMessage]="
+          candidatoForm.get('nomeDaMae').dirty &&
+          candidatoForm.get('nomeDaMae').errors
+            ? 'Campo Obrigatório!'
+            : null
+        "
       ></app-general-input>
 
       <app-general-input
         [fieldLabel]="'Nome do pai'"
         formControlName="nomeDoPai"
         [placeholderText]="'Digite o nome do seu pai'"
+        [errorMessage]="
+          candidatoForm.get('nomeDoPai').dirty &&
+          candidatoForm.get('nomeDoPai').errors
+            ? 'Campo Obrigatório!'
+            : null
+        "
       ></app-general-input>
 
       <app-general-input
@@ -155,6 +185,14 @@
             formControlName="dataDeNascimento"
             [placeholder]="'dd/mm/aaaa'"
           ></p-calendar>
+          <small
+            *ngIf="
+              candidatoForm.get('dataDeNascimento').dirty &&
+              candidatoForm.get('dataDeNascimento').errors.idadeInvalida
+            "
+            class="form-text text-danger"
+            >O candidato deve ter 18 anos ou mais.
+          </small>
         </div>
       </div>
 

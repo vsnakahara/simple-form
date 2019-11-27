@@ -1,5 +1,7 @@
 <div class="row">
-  <div class="col-lg-8 col-md-12 helpers-centered shadow helpers-padding-tb helpers-bg-white">
+  <div
+    class="col-lg-8 col-md-12 helpers-centered shadow helpers-padding-tb helpers-bg-white"
+  >
     <h4>
       Dados complementares
     </h4>
@@ -37,7 +39,9 @@
             >
           </select>
         </div>
+      </div>
 
+      <div class="row">
         <div class="col-lg-6 col-sm-12 form-group">
           <app-general-input
             [fieldLabel]="'Quantidade de filhos'"
@@ -99,6 +103,7 @@
               "
             ></app-general-input>
           </div>
+
           <div class="col-6">
             <app-general-input
               formControlName="bairro"
@@ -128,6 +133,7 @@
               "
             ></app-general-input>
           </div>
+
           <div class="col-6">
             <app-general-input
               formControlName="estado"
@@ -141,14 +147,16 @@
               "
             ></app-general-input>
           </div>
+        </div>
 
+        <div class="row">
           <div class="col-6">
-              <app-general-input
-                formControlName="cep"
-                [fieldLabel]="'CEP'"
-                [placeholderText]="'Digite o CEP'"
-              ></app-general-input>
-            </div>
+            <app-general-input
+              formControlName="cep"
+              [fieldLabel]="'CEP'"
+              [placeholderText]="'Digite o CEP'"
+            ></app-general-input>
+          </div>
 
           <div class="col-6">
             <app-general-input
@@ -188,7 +196,9 @@
               [placeholderText]="'Digite o seu telefone'"
             ></app-general-input>
           </div>
-
+        </div>
+        
+        <div class="row">
           <div class="col-6">
             <app-general-input
               [fieldLabel]="'Celular'"
