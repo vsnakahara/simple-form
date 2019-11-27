@@ -3,25 +3,25 @@
     {
       "id": 1,
       "dadosPrivados": {
+        "nome": "Luke Skywalker",
+        "nomeSocial": "",
+        "dataDeNascimento": "1977-05-19",
+        "sexo": "masculino",
         "cpf": "45589569087",
         "rg": "493806994",
-        "nome": "Luke Skywalker",
-        "sexo": "masculino",
-        "nis": "",
         "orgaoExpedidor": "SSP",
         "estadoExpedidor": "",
         "dataDeEmissao": "2000-01-01",
+        "nis": "",
         "nomeDaMae": "Padamé Amidala",
         "nomeDoPai": "Anakin Skywalker",
-        "nomeSocial": "",
-        "dataDeNascimento": "1977-05-19",
         "tituloDeEleitor": ""
       },
       "dadosPublicos": {
         "estadoCivil": "",
-        "sabatista": "",
         "grauDeEscolaridade": "ensino_fundamentao_incompleto",
         "quantidadeDeFilhos": 0,
+        "sabatista": "",
         "contato": {
           "email": "luke_skywalker@email.com",
           "telefone": "4431231231",
