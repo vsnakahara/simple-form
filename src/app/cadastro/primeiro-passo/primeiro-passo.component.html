@@ -129,11 +129,10 @@
               ></p-calendar>
               <small
                 *ngIf="
-                  candidatoForm.get('dataDeEmissao').dirty &&
-                  candidatoForm.get('dataDeEmissao').errors.idadeInvalida
+                candidatoForm.get('dataDeEmissao').dirty && candidatoForm.get('dataDeEmissao').errors
                 "
                 class="form-text text-danger"
-                >O candidato deve ter 18 anos ou mais.
+                >Campo obrigatório!
               </small>
             </div>
           </div>
@@ -188,7 +187,7 @@
           <small
             *ngIf="
               candidatoForm.get('dataDeNascimento').dirty &&
-              candidatoForm.get('dataDeNascimento').errors.idadeInvalida
+              candidatoForm.get('dataDeNascimento').errors?.idadeInvalida
             "
             class="form-text text-danger"
             >O candidato deve ter 18 anos ou mais.
