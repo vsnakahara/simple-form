@@ -1,3 +1,12 @@
 .box {
   margin: 50px auto;
 }
+.delete {
+  float: right;
+  cursor: pointer;
+  &:hover {
+    i {
+      color: #dc3545;
+    }
+  }
+}

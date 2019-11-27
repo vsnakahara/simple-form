@@ -22,7 +22,7 @@ export class CandidatoService {
     return this.http.get<Candidato>(`${this.url}${idCandidato}`);
   }
 
-  deleteCandidato(idCandidato: number) {
+  deleteCandidato(idCandidato: number): Observable<any> {
     return this.http.delete<Candidato>(`${this.url}${idCandidato}`, {
       headers: this.headers
     });

@@ -7,6 +7,10 @@
       <h3>
         Candidato {{ candidato.id }}:
         <strong>{{ candidato.dadosPrivados.nome }}</strong>
+
+        <a class="delete" (click)="excluirCandidato()">
+          <i class="pi pi-trash align-text-bottom" data-toggle="tooltip" data-placement="top" title="Excluir Candidato"></i> 
+        </a>
       </h3>
       <app-mostrar-dados-candidatos
         [candidato]="candidato"
