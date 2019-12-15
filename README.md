@@ -1,4 +1,4 @@
-# AvaliacaoMentorsTec
+# Formulário para candidatos de concurso
 
 Este projeto foi desenvolvido com as seguintes configurações:
 Angular: 7.2.15
